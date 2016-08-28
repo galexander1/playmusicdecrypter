@@ -85,7 +85,7 @@ class PlayMusicDecrypter:
 
     def normalize_filename(self, filename):
         """Remove invalid characters from filename"""
-        return unicode(re.sub(r'[<>:"/\\|?*]', " ", filename))
+        return unicode(re.sub(r'[<>:"/\\|?*]', " ", filename)).encode('ascii','ignore')
 
     def get_outfile(self):
         """Returns output filename based on song informations"""
